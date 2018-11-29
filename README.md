@@ -27,6 +27,7 @@ Sample Output <br>
 2 <br>
 3 <br>
 
-Greedy Solution explenation <br>
+Greedy Solution Explenation <br>
 
+Dynamic Programming Explenation <br>
 
