@@ -22,5 +22,9 @@ Sample Input
 2 4 2 2 1 0  &nbsp;&nbsp;0.95 <br>
 2 4 2 0 1 0  &nbsp;&nbsp;0.55 <br>
 
+Sample Output 
+2 <br>
+3 <br>
+
 
 
