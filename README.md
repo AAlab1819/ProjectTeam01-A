@@ -4,7 +4,7 @@ A comparison of implementation of making change using Dynamic Programming and Gr
 Team Member <br>
 Izzy Engelbert S. <br>
 Kevin Jonathan <br>
-Marcelus Vinsens <br>
+Marselus Vinsens <br>
 Yoel Adriel C. <br>
 
 Language <br>
@@ -28,7 +28,7 @@ Sample Output <br>
 2 <br>
 3 <br>
 
-Greedy Solution Explenation <br>
+Greedy Solution Explaination <br>
 
-Dynamic Programming Explenation <br>
+Dynamic Programming Explaination <br>
 
