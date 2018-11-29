@@ -1,11 +1,11 @@
 # ProjectTeam01-A
 A comparison of implementation of making change using Dynamic Programming and Greedy
 
-Team Member
-Izzy Engelbert S.
-Kevin Jonathan
-Marcelus Vinsens
-Yoel Adriel C.
+Team Member <br>
+Izzy Engelbert S. <br>
+Kevin Jonathan <br>
+Marcelus Vinsens <br>
+Yoel Adriel C. <br>
 
 Language
 C++ 14
@@ -19,12 +19,14 @@ and the total number of coins that changes hands is only 3 so the minimum number
 
 Sample Input 
 
-2 4 2 2 1 0  &nbsp;&nbsp;0.95 <br>
-2 4 2 0 1 0  &nbsp;&nbsp;0.55 <br>
+2 4 2 2 1 0  &nbsp;&nbsp; &nbsp;&nbsp; 0.95 <br>
+2 4 2 0 1 0  &nbsp;&nbsp; &nbsp;&nbsp; 0.55 <br>
+0 0 0 0 0 0 <br>
 
-Sample Output 
+Sample Output <br>
 2 <br>
 3 <br>
+
 
 
 
