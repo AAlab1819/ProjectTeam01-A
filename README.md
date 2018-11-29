@@ -11,6 +11,7 @@ Language <br>
 C++ 14 <br>
 
 Main Problem <br>
+
 In this case we are given a set of coins whose amount can be vary. The set of coins is 5c, 10c, 20c, 50c, $1, and $2.
 The problem is we need to find the minimum number of coins that change hands. If we need to pay 55c, and we do not hold
 a 50c coin, we could pay this as 2 × 20c + 10c + 5c to make a total of 4 coins. If we tender $1 we will
