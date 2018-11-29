@@ -19,8 +19,8 @@ and the total number of coins that changes hands is only 3 so the minimum number
 
 Sample Input 
 
-2 4 2 2 1 0       0.95 \br
-2 4 2 0 1 0       0.55 \br
+2 4 2 2 1 0       0.95 /br
+2 4 2 0 1 0       0.55 /br
 
 
 
