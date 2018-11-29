@@ -7,8 +7,8 @@ Kevin Jonathan <br>
 Marcelus Vinsens <br>
 Yoel Adriel C. <br>
 
-Language
-C++ 14
+Language <br>
+C++ 14 <br>
 
 Main Problem <br>
 In this case we are given a set of coins whose amount can be vary. The set of coins is 5c, 10c, 20c, 50c, $1, and $2.
