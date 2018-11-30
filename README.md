@@ -102,13 +102,12 @@ for(int i = 5; i>=0; i--){
     }
 }
 
-return 0;
-```
-```c++
 for(int i = coinCents; i<maxValue; i++){ 
     answer = min(answer, ways[i] + minimumChange(i - coinCents, coinsCents)); 
 }
 cout<<answer<<endl;
+
+return 0;
 ```
 # COMPARISON 
  <br>
