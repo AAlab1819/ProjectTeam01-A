@@ -121,11 +121,15 @@ cout<<answer<<endl;
 ##### Greedy Algorithm result:
 ![greedy](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/GreedyCapt.PNG)
 ##### Dynamic Programming result:
-![dp](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/DPCapt.PNG)
+![dp](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/dp.JPG)
  
-As we can see, we get different result from the example. There is difference between this two method output. Its because greedy only looking for most optimal value at the time.
+As we can see, we get different result from the example. There is difference between this two method output. Its because greedy only looking for most optimal value at the time. The run time of this two code was also different. For DP its take about 2.04s and greedy take 1.5s. So DP 0.5s longer than greedy. But in memory greedy was bigger than DP. Greedy take around 2872 and DP 2764.
+<br>
 Time complexity for greedy was Ω(n log(n)) and <br>
-Time complexity for dynamic programming was O(n)
+Time complexity for dynamic programming was O(n) <br>
+
+So the conclution is using dynamic programming is better than greedy because it gave us the optiomal output. But DP took more time to run. 
+
 
 
  
