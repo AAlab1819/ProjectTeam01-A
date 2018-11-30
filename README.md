@@ -28,12 +28,16 @@ Sample Output <br>
 2 <br>
 3 <br>
 
+
+
 GREEDY SOLUTION EXPLANATION <br>
 
-First we need to make a index for all the coins. After input we are going to loop the 
+First we need to make a index for all the coins. Then after indexing is done we will need to sort the inputted coins. Sorting is done by Quick Sort technique. The sorting will be done in the loop (while value is > 0 or value is < 0), after sorting is done, we will reduce value with the coin that has the smallest difference with the value. After done reducing the value we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again. Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
+
+The output of greedy only looking for the most optimal in that time so the output won't be maximal.<br><br>
 
 
-After testing the output of greedy there is differences in the output because greedy solution only looking for the most optimal in that time so the output won't be maximal.<br><br>
+
 DYNAMIC PROGRAMMING SOLUTION EXPLANATION <br>
 
 For Dynamic programing after input first we are going  to set the value with inside the array to be compared <br>
@@ -51,7 +55,7 @@ after that we are going to loop and compare all the value in the array and overw
     }
     return 0;
  
- for(int i = coinCents; i<maxValue; i++) <br>
+ for(int i = coinCents; i<maxValue; i++) <br><br>
  { answer = min(answer, ways[i] + minimumChange(i - coinCents, coinsCents)); } <br> cout<<answer<<endl; <br>
  
  COMPARISON 
