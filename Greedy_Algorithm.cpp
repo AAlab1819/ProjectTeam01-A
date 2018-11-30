@@ -53,6 +53,9 @@ int partition (int arr[], int arr1[], int low, int high)
 
 int main(){
 
+
+    time_t start_time;
+    time_t end_time;
     //coins fraction index in the array
     int FIVE_C = 0, TEN_C = 1, TWENTY_C = 2, FIFTY_C = 3, ONE_D = 4, TWO_D = 5;
     int coinSize = 6;
@@ -64,6 +67,7 @@ int main(){
     vector<int> answer;
     //loop while input flag is true
     while(cont){
+        time(&start_time);
         int ans = -1;
         int coins[6] = {0};
         float value = 0;
@@ -91,13 +95,13 @@ int main(){
                 int diffsIndex[coinSize] = {0};
                 //output invalid input if the value needed is smaller than 5 cents
                 if(value<allCoins[FIVE_C]){
-                    cout<<"invalid input."<<endl;
+                    //cout<<"invalid input."<<endl;
                 }else{
                     int prevValue = 0;
                     //loop while value is larger than 0(when the value needed is not yet reached
                     //loop while value is smaller than 0 (when the value given as payment exceed the value needed so it require changes
                     while(value > 0 || value < 0){
-                        cout<<value<<endl;
+                        //cout<<value<<endl;
                         if(value > 0){
                             for(int i=0; i<coinSize; ++i){
                                 int diff = value - allCoins[i];
@@ -116,7 +120,7 @@ int main(){
                                     value -= allCoins[diffsIndex[i]];
                                     --coins[diffsIndex[i]];
                                     ++ans;
-                                    cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;
+                                    //cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;
                                     break;
                                 }
                             }
@@ -130,7 +134,7 @@ int main(){
                                 prevValue = value;
                             }
                             if(empty){
-                                cout<<"coin not enough"<<endl;
+                                //cout<<"coin not enough"<<endl;
                                 value = 0;
                             }
                         }else if(value < 0){
@@ -154,7 +158,7 @@ int main(){
                                 if(inValue - allCoins[diffsIndex[i]] >= 0){
                                     value += allCoins[diffsIndex[i]];
                                     ++ans;
-                                    cout<<"return coin: "<<allCoins[diffsIndex[i]]<<endl;
+                                    //cout<<"return coin: "<<allCoins[diffsIndex[i]]<<endl;
                                     break;
                                 }
                             }
@@ -172,11 +176,15 @@ int main(){
         }else{
             value = 0;
         }
+        time(&end_time);
+        double elapsed_time = end_time - start_time;
+        //cout<<"Elapsed Time: "<<elapsed_time<<endl;
     }
     //display answer
     for(int i=0; i<answer.size(); ++i){
         cout<<answer[i]<<endl;
     }
+
 
     return 0;
 }

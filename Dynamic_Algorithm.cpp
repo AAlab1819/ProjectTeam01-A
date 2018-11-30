@@ -12,7 +12,7 @@ int minimumChange(int v, int values[])
     }
     return 0;
 }
-    
+
 int main()
 {
     //coins index in the array
@@ -23,7 +23,7 @@ int main()
 	{
 		coinsCents[i] = coins[i]/5;
 	}
-	
+
 	int maxValue = 200;
 
     double coin;
@@ -32,19 +32,21 @@ int main()
 
 	//represents the number of ways to reprecent the coins in cents
 	int ways[maxValue+1];
-	
+	time_t start_time;
+    time_t end_time;
 	//looping with error handling
 	while(cin>>coins[0]>>coins[1]>>coins[2]>>coins[3]>>coins[4]>>coins[5]>>coin)
     {
+        time(&start_time);
 		if(coins[0]+coins[1]+coins[2]+coins[3]+coins[4]+coins[5] == 0) break;
-        
+
         //to define the zero Cents
         ways[0]=0;
         answer = limit;
-        
+
         //to set the value with inside the array to be compared
         for(int i=1; i<maxValue; i++) ways[i] = limit;
- 
+
         for(int i=0; i<num; i++)
         {
             while(coins[i])
@@ -60,16 +62,19 @@ int main()
                 coins[i]--;
             }
         }
-        
+
         int coinCents = (int)(coin * 100 / 5 + 0.1);
-        
+
         //to compare the coins given and output the answer
         for(int i = coinCents; i<maxValue; i++)
         {
-            
+
             answer = min(answer, ways[i] + minimumChange(i - coinCents, coinsCents));
         }
         cout<<answer<<endl;
-    }	
+        time(&end_time);
+        double elapsed_time = end_time - start_time;
+        //cout<<"Elapsed Time: "<<elapsed_time<<endl;
+    }
 	return 0;
 }
