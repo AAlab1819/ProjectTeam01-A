@@ -39,8 +39,7 @@ First we need to make a index for all the coins. Then after indexing is done we 
 
 After sorting is done, we will reduce value with the coin that has the smallest difference with the value.
 >    quickSort(diffs, diffsIndex, 0, coinSize-1);
-
->    for(int i=0; i<coinSize; ++i){<br>
+     for(int i=0; i<coinSize; ++i){<br>
         if(coins[diffsIndex[i]]>0){<br>
           value -= allCoins[diffsIndex[i]];<br>
           --coins[diffsIndex[i]];<br>
