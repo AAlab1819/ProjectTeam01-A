@@ -117,8 +117,13 @@ for(int i = coinCents; i<maxValue; i++){
 cout<<answer<<endl;
 ```
 # COMPARISON 
- <br>
- <br>
+
+##### Greedy Algorithm result:
+![greedy](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/DPCapt.PNG)
+##### Dynamic Programming result:
+![dp](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/DPCapt.PNG)
+ 
+As we can see, we get different result from the example.
  
 # ANALYSIS
  <br>
