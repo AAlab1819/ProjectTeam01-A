@@ -39,13 +39,13 @@ while(value > 0 || value < 0)
 After sorting is done, we will reduce value with the coin that has the smallest difference with the value.
 ```c++
 quickSort(diffs, diffsIndex, 0, coinSize-1);
-for(int i=0; i<coinSize; ++i){<br>
-    if(coins[diffsIndex[i]]>0){<br>
-      value -= allCoins[diffsIndex[i]];<br>
-      --coins[diffsIndex[i]];<br>
-      ++ans;<br>
-      cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;<br>
-      break;<br>
+for(int i=0; i<coinSize; ++i){
+    if(coins[diffsIndex[i]]>0){
+      value -= allCoins[diffsIndex[i]];
+      --coins[diffsIndex[i]];
+      ++ans;
+      cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;
+      break;
       }
 }
 ```
