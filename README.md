@@ -119,7 +119,7 @@ cout<<answer<<endl;
 # COMPARISON 
 
 ##### Greedy Algorithm result:
-![greedy](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/DPCapt.PNG)
+![greedy](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/GreedyCapt.PNG)
 ##### Dynamic Programming result:
 ![dp](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/DPCapt.PNG)
  
