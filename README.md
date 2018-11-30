@@ -32,7 +32,9 @@ Sample Output <br>
 
 # GREEDY SOLUTION EXPLANATION <br>
 
-First we need to make a index for all the coins. Then after indexing is done we will need to sort the inputted coins. Sorting is done by Quick Sort technique. The sorting will be done in the loop (while value is > 0 or value is < 0), after sorting is done, we will reduce value with the coin that has the smallest difference with the value. After done reducing the value we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again. Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
+First we need to make a index for all the coins. Then after indexing is done we will need to sort the inputted coins. Sorting is done by Quick Sort technique. The sorting will be done in the loop (while value is > 0 or value is < 0).
+>   while(value > 0 || value < 0) <br><br>
+After sorting is done, we will reduce value with the coin that has the smallest difference with the value. After done reducing the value we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again. Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
 
 The output of greedy only looking for the most optimal in that time so the output won't be maximal.<br><br>
 
@@ -51,14 +53,14 @@ after that we are going to loop and compare all the value in the array and overw
  after overwrite it with possible coins than we are going to compare the coins given and output the answer. <br> <br>
  to find the minimum change we are using  <br> <br>
  
-    for(int i = 5; i>=0; i--)
+ >  for(int i = 5; i>=0; i--)
     { if(values[i]<=v)
         { return 1 + minimumChange(v - values[i], values);}
     }
     return 0;
- 
- for(int i = coinCents; i<maxValue; i++) <br>
- { answer = min(answer, ways[i] + minimumChange(i - coinCents, coinsCents)); } <br> cout<<answer<<endl; <br>
+    
+ >  for(int i = coinCents; i<maxValue; i++)
+    { answer = min(answer, ways[i] + minimumChange(i - coinCents, coinsCents)); } <br> cout<<answer<<endl; <br><br>
  
 # COMPARISON 
  <br>
