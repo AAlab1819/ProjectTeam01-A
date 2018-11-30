@@ -33,9 +33,23 @@ Sample Output <br>
 # GREEDY SOLUTION EXPLANATION <br>
 
 First we need to make a index for all the coins. Then after indexing is done we will need to sort the inputted coins. Sorting is done by Quick Sort technique. The sorting will be done in the loop (while value is > 0 or value is < 0).
+
 >   while(value > 0 || value < 0) <br><br>
 <br>
-After sorting is done, we will reduce value with the coin that has the smallest difference with the value. After done reducing the value we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again. Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
+
+After sorting is done, we will reduce value with the coin that has the smallest difference with the value.
+>    quickSort(diffs, diffsIndex, 0, coinSize-1);
+
+>    for(int i=0; i<coinSize; ++i){
+        if(coins[diffsIndex[i]]>0){
+          value -= allCoins[diffsIndex[i]];
+          --coins[diffsIndex[i]];
+          ++ans;
+          cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;
+          break;
+          }} <br><br>
+          
+After done reducing the value we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again. Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
 
 The output of greedy only looking for the most optimal in that time so the output won't be maximal.<br><br>
 
@@ -44,10 +58,12 @@ The output of greedy only looking for the most optimal in that time so the outpu
 # DYNAMIC PROGRAMMING SOLUTION EXPLANATION <br>
 
 For Dynamic programing after input first we are going  to set the value with inside the array to be compared <br>
-> for(int i=1; i<maxValue; i++) ways[i] = limit; <br><br>
+
+> for(int i=1; i<maxValue; i++) ways[i] = limit; <br>
 
 after that we are going to loop and compare all the value in the array and overwrite the value with the possible cents<br>
 <br>   
+
 > if(ways[j] < limit)
 { ways[j + coinsCents[i]] = min(ways[j]+1, ways[j+coinsCents[i]]);} <br><br>
  
