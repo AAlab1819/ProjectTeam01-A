@@ -41,10 +41,12 @@ The output of greedy only looking for the most optimal in that time so the outpu
 # DYNAMIC PROGRAMMING SOLUTION EXPLANATION <br>
 
 For Dynamic programing after input first we are going  to set the value with inside the array to be compared <br>
-> for(int i=1; i<maxValue; i++) ways[i] = limit; >
+> for(int i=1; i<maxValue; i++) ways[i] = limit; <br><br>
+
 after that we are going to loop and compare all the value in the array and overwrite the value with the possible cents<br>
-<br>   if(ways[j] < limit) <br>
-{ ways[j + coinsCents[i]] = min(ways[j]+1, ways[j+coinsCents[i]]);} <br>
+<br>   
+> if(ways[j] < limit)
+{ ways[j + coinsCents[i]] = min(ways[j]+1, ways[j+coinsCents[i]]);} <br><br>
  
  after overwrite it with possible coins than we are going to compare the coins given and output the answer. <br> <br>
  to find the minimum change we are using  <br> <br>
