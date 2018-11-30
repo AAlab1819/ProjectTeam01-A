@@ -28,13 +28,13 @@ Sample Output <br>
 2 <br>
 3 <br>
 
-Greedy Solution Explaination <br>
+GREEDY SOLUTION EXPLANATION <br>
 
 First we need to make a index for all the coins. After input we are going to loop the 
 
 
-After testing the output of greedy there is differences in the output because greedy solution only looking for the most optimal in that time so the output won't be maximal.
-Dynamic Programming Explaination <br>
+After testing the output of greedy there is differences in the output because greedy solution only looking for the most optimal in that time so the output won't be maximal.<br><br>
+DYNAMIC PROGRAMMING SOLUTION EXPLANATION <br>
 
 For Dynamic programing after input first we are going  to set the value with inside the array to be compared <br>
 for(int i=1; i<maxValue; i++) ways[i] = limit; <br>
