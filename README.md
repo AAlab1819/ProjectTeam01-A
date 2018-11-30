@@ -123,8 +123,10 @@ cout<<answer<<endl;
 ##### Dynamic Programming result:
 ![dp](https://github.com/AAlab1819/ProjectTeam01-A/blob/master/DPCapt.PNG)
  
-As we can see, we get different result from the example.
+As we can see, we get different result from the example. There is difference between this two method output. Its because greedy only looking for most optimal value at the time.
+Time complexity for greedy was Ω(n log(n)) and <br>
+Time complexity for dynamic programming was O(n)
+
+
  
-# ANALYSIS
- <br>
- <br>
+
