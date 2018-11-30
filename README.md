@@ -30,5 +30,17 @@ Sample Output <br>
 
 Greedy Solution Explaination <br>
 
+First we need to make a index for all the coins. After input we are going to loop the 
+
 Dynamic Programming Explaination <br>
 
+For Dynamic programing after input first we are going  to set the value with inside the array to be compared
+for(int i=1; i<maxValue; i++) ways[i] = limit; <br>
+after that we are going to loop nad compare all the value in the array and overwrite the value with the possible cents
+<br>   if(ways[j] < limit) < br>
+                    { <br>
+                        ways[j + coinsCents[i]] = min(ways[j]+1, ways[j+coinsCents[i]]); <br>
+                    } <br>
+ 
+ after overwrite it with possible coins than we are going to compare the coins given and output the answer. <br>
+ 
