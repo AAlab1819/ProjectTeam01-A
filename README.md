@@ -10,7 +10,7 @@ Yoel Adriel C. <br>
 Language <br>
 C++ 14 <br>
 
-# Main Problem <br>
+# Main Problem
 
 In this case we are given a set of coins whose amount can be vary. The set of coins is 5c, 10c, 20c, 50c, $1, and $2.
 The problem is we need to find the minimum number of coins that change hands. If we need to pay 55c, and we do not hold
@@ -30,77 +30,86 @@ Sample Output <br>
 
 
 
-# GREEDY SOLUTION EXPLANATION <br>
+# GREEDY SOLUTION EXPLANATION
 
 First we need to make a index for all the coins. Then after indexing is done we will need to sort the inputted coins. Sorting is done by Quick Sort technique. The sorting will be done in the loop (while value is > 0 or value is < 0).
-
->   while(value > 0 || value < 0) <br><br>
-<br>
-
+```c++
+while(value > 0 || value < 0) 
+```
 After sorting is done, we will reduce value with the coin that has the smallest difference with the value.
->    quickSort(diffs, diffsIndex, 0, coinSize-1);
-     for(int i=0; i<coinSize; ++i){<br>
-        if(coins[diffsIndex[i]]>0){<br>
-          value -= allCoins[diffsIndex[i]];<br>
-          --coins[diffsIndex[i]];<br>
-          ++ans;<br>
-          cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;<br>
-          break;<br>
-          }} <br><br>
-          
+```c++
+quickSort(diffs, diffsIndex, 0, coinSize-1);
+for(int i=0; i<coinSize; ++i){<br>
+    if(coins[diffsIndex[i]]>0){<br>
+      value -= allCoins[diffsIndex[i]];<br>
+      --coins[diffsIndex[i]];<br>
+      ++ans;<br>
+      cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;<br>
+      break;<br>
+      }
+}
+```
 After done reducing the value, we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again.
-> if(prevValue == 0){<br>
-        prevValue = value;<br>
-        }else if(prevValue == value){empty = true;}<br>
-        else{prevValue = value;}<br>
-        if(empty){<br>
-            cout<<"coin not enough"<<endl;<br>
-            value = 0;}}<br>
-        else if(value < 0){<br>
-        int inValue = value*-1;<br>
-        for(int i=0; i<coinSize; ++i){<br>
-        int diff = inValue - allCoins[i];<br>
-        if(diff<0){diff *= -1;}<br>
-        diffs[i] = diff;<br>
-        diffsIndex[i] = i;}<br><br>
-        
+```c++
+bool empty = false;
+if(prevValue == 0){
+    prevValue = value;
+}else if(prevValue == value){
+    empty = true;
+}else{
+    prevValue = value;
+}
+if(empty){
+    cout<<"coin not enough"<<endl;
+    value = 0;
+}
+ ```       
 Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
-
-> for(int i=0; i<coinSize; ++i){      <br>                          
-        if(inValue - allCoins[diffsIndex[i]] >= 0){<br>
-        value += allCoins[diffsIndex[i]];<br>
-        ++ans;<br>
-        cout<<"return coin: "<<allCoins[diffsIndex[i]]<<endl;<br>
-        break;}}<br><br>
-        
+```c++
+int inValue = value*-1;
+for(int i=0; i<coinSize; ++i){
+    if(inValue - allCoins[diffsIndex[i]] >= 0){
+        value += allCoins[diffsIndex[i]];
+        ++ans;
+        cout<<"return coin: "<<allCoins[diffsIndex[i]]<<endl;
+        break;
+    }
+}
+```
 The output of greedy only looking for the most optimal in that time so the output won't be maximal.<br><br>
 
 
 
-# DYNAMIC PROGRAMMING SOLUTION EXPLANATION <br>
+# DYNAMIC PROGRAMMING SOLUTION EXPLANATION
 
 For Dynamic programing after input first we are going  to set the value with inside the array to be compared <br>
+```c++
+for(int i=1; i<maxValue; i++) ways[i] = limit;
+```
+after that we are going to loop and compare all the value in the array and overwrite the value with the possible cents
 
-> for(int i=1; i<maxValue; i++) ways[i] = limit; <br>
+```c++
+if(ways[j] < limit){
+    ways[j + coinsCents[i]] = min(ways[j]+1, ways[j+coinsCents[i]]);
+}
+```
+After overwriting it with possible coins than we are going to compare the coins given and output the answer.
+To find the minimum change we are using:
+```c++
+for(int i = 5; i>=0; i--){
+    if(values[i]<=v){
+        return 1 + minimumChange(v - values[i], values);
+    }
+}
 
-after that we are going to loop and compare all the value in the array and overwrite the value with the possible cents<br>
-<br>   
-
-> if(ways[j] < limit) <br>
-{ ways[j + coinsCents[i]] = min(ways[j]+1, ways[j+coinsCents[i]]);} <br><br>
- 
- after overwrite it with possible coins than we are going to compare the coins given and output the answer. <br> <br>
- to find the minimum change we are using  <br> <br>
- 
- >  for(int i = 5; i>=0; i--)<br>
-    { if(values[i]<=v)<br>
-        { return 1 + minimumChange(v - values[i], values);}}<br>
-    return 0;<br>
-    
- >  for(int i = coinCents; i<maxValue; i++)<br>
-    { answer = min(answer, ways[i] + minimumChange(i - coinCents, coinsCents)); }<br> 
-    cout<<answer<<endl; <br><br>
- 
+return 0;
+```
+```c++
+for(int i = coinCents; i<maxValue; i++){ 
+    answer = min(answer, ways[i] + minimumChange(i - coinCents, coinsCents)); 
+}
+cout<<answer<<endl;
+```
 # COMPARISON 
  <br>
  <br>
