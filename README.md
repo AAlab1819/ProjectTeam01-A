@@ -49,8 +49,31 @@ After sorting is done, we will reduce value with the coin that has the smallest 
           break;<br>
           }} <br><br>
           
-After done reducing the value we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again. Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
+After done reducing the value, we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again.
+> if(prevValue == 0){<br>
+        prevValue = value;<br>
+        }else if(prevValue == value){empty = true;}<br>
+        else{prevValue = value;}<br>
+        if(empty){<br>
+            cout<<"coin not enough"<<endl;<br>
+            value = 0;}}<br>
+        else if(value < 0){<br>
+        int inValue = value*-1;<br>
+        for(int i=0; i<coinSize; ++i){<br>
+        int diff = inValue - allCoins[i];<br>
+        if(diff<0){diff *= -1;}<br>
+        diffs[i] = diff;<br>
+        diffsIndex[i] = i;}<br><br>
+        
+Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
 
+> for(int i=0; i<coinSize; ++i){      <br>                          
+        if(inValue - allCoins[diffsIndex[i]] >= 0){<br>
+        value += allCoins[diffsIndex[i]];<br>
+        ++ans;<br>
+        cout<<"return coin: "<<allCoins[diffsIndex[i]]<<endl;<br>
+        break;}}<br><br>
+        
 The output of greedy only looking for the most optimal in that time so the output won't be maximal.<br><br>
 
 
