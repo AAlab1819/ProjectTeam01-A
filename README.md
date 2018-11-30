@@ -32,24 +32,30 @@ Sample Output <br>
 
 # GREEDY SOLUTION EXPLANATION
 
-First we need to make a index for all the coins. Then after indexing is done we will need to sort the inputted coins. Sorting is done by Quick Sort technique. The sorting will be done in the loop (while value is > 0 or value is < 0).
+First we index all the coins and map it to the coin value difference with the required value.
+Then after indexing is done we will need to sort the inputted coins from the smallest the difference. 
+We custom the Quick Sort function to also swap the index array. 
+The sorting is done in each loop.
+The loop will continue as long as more current required value is not zero.
 ```c++
 while(value > 0 || value < 0) 
 ```
+
 After sorting is done, we will reduce value with the coin that has the smallest difference with the value.
 ```c++
 quickSort(diffs, diffsIndex, 0, coinSize-1);
 for(int i=0; i<coinSize; ++i){
     if(coins[diffsIndex[i]]>0){
-      value -= allCoins[diffsIndex[i]];
-      --coins[diffsIndex[i]];
-      ++ans;
-      cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;
-      break;
+          value -= allCoins[diffsIndex[i]];
+          --coins[diffsIndex[i]];
+          ++ans;
+          cout<<"remove coin: "<<allCoins[diffsIndex[i]]<<endl;
+          break;
       }
 }
 ```
-After done reducing the value, we will check the availability of the coins, if the previous value is not changed then the coin is empty. Then proceeded to creating an array consisting of difference of value and coins fraction, after that we will sort it again.
+After done reducing the value, we will check the availability of the coins, if the previous value is not changed then the coin is empty.
+Then, the transaction loop will stop and request new input.
 ```c++
 bool empty = false;
 if(prevValue == 0){
@@ -63,8 +69,9 @@ if(empty){
     cout<<"coin not enough"<<endl;
     value = 0;
 }
- ```       
-Then do reducing reduce value with the coin that has the smallest difference with the value, but this will return changes, so we want the value not to exceed zero when added by the coin fraction
+```
+Then reduce value with the coin that has the smallest difference with the value, but this will return changes. 
+So we want the value not to exceed zero when added by the coin fraction
 ```c++
 int inValue = value*-1;
 for(int i=0; i<coinSize; ++i){
@@ -76,8 +83,7 @@ for(int i=0; i<coinSize; ++i){
     }
 }
 ```
-The output of greedy only looking for the most optimal in that time so the output won't be maximal.<br><br>
-
+The output of greedy only get the most optimal value at the time so the output in this case won't be the global maximum.
 
 
 # DYNAMIC PROGRAMMING SOLUTION EXPLANATION
@@ -101,13 +107,12 @@ for(int i = 5; i>=0; i--){
         return 1 + minimumChange(v - values[i], values);
     }
 }
-
+```
+```c++
 for(int i = coinCents; i<maxValue; i++){ 
     answer = min(answer, ways[i] + minimumChange(i - coinCents, coinsCents)); 
 }
 cout<<answer<<endl;
-
-return 0;
 ```
 # COMPARISON 
  <br>
